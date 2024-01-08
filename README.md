@@ -50,7 +50,7 @@ For any initial/required rsync flags, eg: `-avzr --delete`
 The source directory, path relative to `$GITHUB_WORKSPACE` root, eg: `dist/`.
 Multiple sources should be separated by space.
 
-##### 7. `TARGET` (optional, default '/home/REMOTE_USER/')
+##### 7. `TARGET` (optional, default '/home/REMOTE_USER/workspace/')
 
 The target directory
 
