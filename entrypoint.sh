@@ -35,4 +35,4 @@ do
 done
 
 # Do deployment
-sh -c "rsync $ARGS $EXCLUDE -e 'ssh -i $SSH_PATH/deploy_key $SSH_CMD_ARGS -p $PORT_NUMBER' $CHOWN ${GITHUB_WORKSPACE}$SOURCE root@212.33.205.190:$TARGET"
+sh -c "rsync $ARGS $EXCLUDE -e 'ssh -i $SSH_PATH/deploy_key $SSH_CMD_ARGS -p 22' $CHOWN ${GITHUB_WORKSPACE}$SOURCE root@212.33.205.190:/lingemy/project/school/prod/code/wp-test"
