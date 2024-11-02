@@ -9,7 +9,7 @@ echo "$SSH_PRIVATE_KEY" > "$SSH_PATH/deploy_key"
 chmod 600 "$SSH_PATH/deploy_key"
 
 # Variables.
-SSH_CMD_ARGS="${SSH_CMD_ARGS:--o StrictHostKeyChecking=no}"
+SSH_CMD_ARGS="${SSH_CMD_ARGS:--o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null}"
 ARGS="${ARGS:--avzr}"
 SOURCE="${SOURCE:-/}"
 TARGET="${TARGET:-}"
@@ -35,4 +35,4 @@ do
 done
 
 # Do deployment
-sh -c "rsync $ARGS $EXCLUDE $CHOWN ${GITHUB_WORKSPACE}$SOURCE ${REMOTE_USER}@${REMOTE_HOST}:$TARGET"
+sh -c "rsync $ARGS $EXCLUDE -e 'ssh -i $SSH_PATH/deploy_key $SSH_CMD_ARGS -p $PORT_NUMBER' --progress $CHOWN ${GITHUB_WORKSPACE}$SOURCE ${REMOTE_USER}@${REMOTE_HOST}:$TARGET"
