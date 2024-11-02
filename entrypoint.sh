@@ -35,4 +35,4 @@ do
 done
 
 # Do deployment
-sh -c "ssh root@212.33.205.190 -p"
+sh -c "ssh -i $SSH_PATH/deploy_key $SSH_CMD_ARGS -p $PORT_NUMBER"
