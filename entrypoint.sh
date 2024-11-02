@@ -35,4 +35,4 @@ do
 done
 
 # Do deployment
-sh -c ""rsync $ARGS $EXCLUDE -e 'ssh -i $SSH_PATH/deploy_key $SSH_CMD_ARGS -p $PORT_NUMBER'"
+sh -c "rsync $ARGS $EXCLUDE -e 'ssh -i $SSH_PATH/deploy_key $SSH_CMD_ARGS -p $PORT_NUMBER'"
