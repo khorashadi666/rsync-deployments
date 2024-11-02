@@ -35,4 +35,4 @@ do
 done
 
 # Do deployment
-sh -c "rsync -av -e 'ssh -i $SSH_PATH/deploy_key -p 22' ${GITHUB_WORKSPACE}$SOURCE root@212.33.205.191:/home/wp-test"
+sh -c "rsync -av -e 'ssh -i $SSH_PATH/deploy_key -p 22' ${GITHUB_WORKSPACE}$SOURCE root@212.33.205.190:/home/wp-test"
